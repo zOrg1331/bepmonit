@@ -5,8 +5,8 @@
 #include <QtNetwork>
 #include "data.h"
 
-#include <net-snmp/net-snmp-config.h>
-#include <net-snmp/net-snmp-includes.h>
+// #include <net-snmp/net-snmp-config.h>
+// #include <net-snmp/net-snmp-includes.h>
 
 class GETDATA : public QObject {
 		Q_OBJECT
@@ -15,7 +15,7 @@ class GETDATA : public QObject {
 		GETDATA(DATA *, QTcpSocket *);
 
 	public slots:
-		void setSNMPSess(netsnmp_session *);
+// 		void setSNMPSess(netsnmp_session *);
 
 	private slots:
 		void readDataF();
@@ -23,7 +23,7 @@ class GETDATA : public QObject {
 
 	private:
 		DATA *dataValues;
-		netsnmp_session *ss;
+// 		netsnmp_session *ss;
 
 		QTimer *timer;
 		quint64 blockSize;

@@ -25,6 +25,7 @@ class bepcontrol: public QWidget {
 		~bepcontrol();
 
 	protected:
+		void closeEvent(QCloseEvent *);
 
 	private slots:
 		void showTab(QString);

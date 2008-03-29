@@ -18,13 +18,17 @@ class conf: public QWidget {
 		float gettempCritLimitValue();
 		float gettempCoolLimitValue();
 		QString getHost();
-		int getPort();
+		QString getUser();
+		QString getPwd();
 		QString getLogsDir();
 
 	protected:
 
 	private slots:
 		void setConf();
+
+	signals:
+		void confChanged();
 
 	private:
 		log *logger;
@@ -42,8 +46,10 @@ class conf: public QWidget {
 		QLineEdit *tempCoolLimit;
 		QLabel *hostLabel;
 		QLineEdit *hostEdit;
-		QLabel *portLabel;
-		QLineEdit *portEdit;
+		QLabel *userLabel;
+		QLineEdit *userEdit;
+		QLabel *pwdLabel;
+		QLineEdit *pwdEdit;
 		QLabel *logsDirLabel;
 		QLineEdit *logsDirEdit;
 		QPushButton *setButton;
@@ -55,7 +61,8 @@ class conf: public QWidget {
 		float tempCritLimitValue;
 		float tempCoolLimitValue;
 		QString host;
-		int port;
+		QString user;
+		QString pwd;
 		QString logsDir;
 };
 

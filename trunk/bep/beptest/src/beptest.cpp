@@ -7,7 +7,7 @@ beptest::beptest(QWidget *parent) : QWidget(parent) {
 	setdata = new SETDATA(data);
 
 	tcpServer = new QTcpServer(this);
-	tcpServer->listen(QHostAddress::Any, 12365);
+	tcpServer->listen(QHostAddress("127.0.0.1"), 12365);
 	connect(tcpServer, SIGNAL(newConnection()), this, SLOT(estConn()));
 
 	ldefState = new QPushButton(trUtf8("Грозозащита::состояние"));

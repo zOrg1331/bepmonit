@@ -143,25 +143,25 @@
   </kdevdebugger>
   <kdevtrollproject>
     <run>
-      <mainprogram>/home/zorg/j.ats/bep/bep</mainprogram>
+      <mainprogram>/home/zorg/j.ats/bep/bep/bin/bep</mainprogram>
       <programargs/>
       <directoryradio>executable</directoryradio>
       <globaldebugarguments/>
-      <globalcwd>/home/zorg/j.ats/bep/bep</globalcwd>
-      <useglobalprogram>false</useglobalprogram>
+      <globalcwd>/home/zorg/j.ats/bep/bep/bin</globalcwd>
+      <useglobalprogram>true</useglobalprogram>
       <terminal>false</terminal>
-      <autocompile>false</autocompile>
+      <autocompile>true</autocompile>
       <autoinstall>false</autoinstall>
       <autokdesu>false</autokdesu>
       <envvars/>
       <runarguments>
-        <bep></bep>
+        <bep/>
       </runarguments>
       <cwd>
         <bep>/home/zorg/j.ats/bep/bep</bep>
       </cwd>
       <debugarguments>
-        <bep></bep>
+        <bep/>
       </debugarguments>
     </run>
     <general>

@@ -11,6 +11,7 @@ loadcontrol::loadcontrol(DATA *DataValues, statdata *Stats, SETDATA *SetDataValu
 	chartU->setMargin(2);
 	chartU->setSpacing(2);
 	chartU->setFirstText("");
+	chartU->setSecondText(" ");
 	chartU->setTitle(trUtf8("Напряжение"));
 	chartU->setXRange(-10, 10);
 	chartU->setYRange(-10, 10);
@@ -28,6 +29,7 @@ loadcontrol::loadcontrol(DATA *DataValues, statdata *Stats, SETDATA *SetDataValu
 	chartI->setMargin(2);
 	chartI->setSpacing(2);
 	chartI->setFirstText("");
+	chartI->setSecondText(" ");
 	chartI->setTitle(trUtf8("Ток"));
 	chartI->setXRange(-10, 10);
 	chartI->setYRange(-10, 10);

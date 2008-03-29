@@ -3,10 +3,10 @@
 <KDevPrjSession>
  <DocsAndViews NumberOfDocuments="2" >
   <Doc0 NumberOfViews="1" URL="file:///home/zorg/j.ats/bep/beptest/src/beptest.cpp" >
-   <View0 Encoding="" line="314" Type="Source" />
+   <View0 Encoding="" line="6" Type="Source" />
   </Doc0>
   <Doc1 NumberOfViews="1" URL="file:///home/zorg/j.ats/bep/beptest/src/setdata.cpp" >
-   <View0 Encoding="" line="65" Type="Source" />
+   <View0 Encoding="" line="47" Type="Source" />
   </Doc1>
  </DocsAndViews>
  <pluginList>

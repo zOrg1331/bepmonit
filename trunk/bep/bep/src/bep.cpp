@@ -2,10 +2,10 @@
 #include "bep.h"
 
 bep::bep(DATA *data, knscontrol *Kns1ctrl, knscontrol *Kns2ctrl, knscontrol *Kns3ctrl, knscontrol *Kns4ctrl, akbcontrol *Akb1ctrl, akbcontrol *Akb2ctrl, accontrol *Acctrl, loadcontrol *Loadctrl, coolercontrol *Coolerctrl, log *Logger, conf *ConfData, SETDATA *SetDataValues, QWidget *parent) : QWidget(parent) {
-	AKB1charging = true;
-	AKB2charging = true;
-	AKB1discharging = false;
-	AKB2discharging = false;
+// 	AKB1charging = true;
+// 	AKB2charging = true;
+// 	AKB1discharging = false;
+// 	AKB2discharging = false;
 
 	dataValues = data;
 	kns1ctrl = Kns1ctrl;
@@ -35,7 +35,8 @@ bep::bep(DATA *data, knscontrol *Kns1ctrl, knscontrol *Kns2ctrl, knscontrol *Kns
 	logW->setFont(QFont("Sans", 8));
 	logW->resize(300, 80);
 	logW->move(490, 2);
-	connect(logger, SIGNAL(newMsg(int, const char *, int)), this, SLOT(newMsg(int, const char *, int)));
+	connect(logger, SIGNAL(newMsg(int, const char *, int)),
+			this, SLOT(newMsg(int, const char *, int)));
 
 	// создаем элементы
 	knsW1 = new kns(this);
@@ -192,14 +193,6 @@ void bep::paintEvent(QPaintEvent *) {
 	painter.drawLine(KEY5CX, KEY2Y + KEY2H, KEY5CX, KEY5Y);
 	painter.drawLine(KEY6CX, KEY2Y + KEY2H, KEY6CX, KEY6Y);
 	painter.drawLine(KEY7CX, KEY2Y + KEY2H, KEY7CX, KEY7Y);
-
-	// рисуем стрелки заряда/разряда
-	painter.setPen(QPen(QColor(79, 106, 25), 1, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
-	painter.setBrush(QBrush(QColor(122, 163, 39), Qt::SolidPattern));
-/*	if (AKB1charging and !AKB1discharging) painter.drawPath(leftChargArrow);
-	if (AKB1discharging and !AKB1charging) painter.drawPath(leftDischargArrow);
-	if (AKB2charging and !AKB2discharging) painter.drawPath(rightChargArrow);
-	if (AKB2discharging and !AKB2charging) painter.drawPath(rightDischargArrow);*/
 }
 
 void bep::updateData() {
@@ -376,8 +369,8 @@ void bep::updateData() {
 		if (!dataValues->getAKBOff(1)) {
 			arrowLeftCharg->setInvisible(false);
 			arrowLeftDischarg->setInvisible(true);
-			AKB1charging = true;
-			AKB1discharging = false;
+/*			AKB1charging = true;
+			AKB1discharging = false;*/
 		}
 	}
 	if (dataValues->getAKBI(1) >  0) {
@@ -387,8 +380,8 @@ void bep::updateData() {
 		if (!dataValues->getAKBOff(1)) {
 			arrowLeftDischarg->setInvisible(false);
 			arrowLeftCharg->setInvisible(true);
-			AKB1charging = false;
-			AKB1discharging = true;
+/*			AKB1charging = false;
+			AKB1discharging = true;*/
 		}
 	}
 	if ((dataValues->getAKBI(1) >  0) and((dataValues->getExitU() - confData->getAKBULimitValue()) <= 0.2)) {
@@ -398,15 +391,15 @@ void bep::updateData() {
 		if (!dataValues->getAKBOff(1)) {
 			arrowLeftDischarg->setInvisible(false);
 			arrowLeftCharg->setInvisible(true);
-			AKB1charging = false;
-			AKB1discharging = true;
+/*			AKB1charging = false;
+			AKB1discharging = true;*/
 		}
 	}
 	if (dataValues->getAKBOff(1)) {
 		arrowLeftCharg->setInvisible(true);
 		arrowLeftDischarg->setInvisible(true);
-		AKB1charging = true;
-		AKB1discharging = true;
+/*		AKB1charging = true;
+		AKB1discharging = true;*/
 	}
 
 	akbW2->setOff(dataValues->getAKBOff(2));
@@ -461,8 +454,8 @@ void bep::updateData() {
 		if (!dataValues->getAKBOff(2)) {
 			arrowRightCharg->setInvisible(false);
 			arrowRightDischarg->setInvisible(true);
-			AKB2charging = true;
-			AKB2discharging = false;
+/*			AKB2charging = true;
+			AKB2discharging = false;*/
 		}
 	}
 	if (dataValues->getAKBI(2) >  0) {
@@ -472,8 +465,8 @@ void bep::updateData() {
 		if (!dataValues->getAKBOff(2)) {
 			arrowRightDischarg->setInvisible(false);
 			arrowRightCharg->setInvisible(true);
-			AKB2charging = false;
-			AKB2discharging = true;
+/*			AKB2charging = false;
+			AKB2discharging = true;*/
 		}
 	}
 	if ((dataValues->getAKBI(2) >  0) and((dataValues->getExitU() - confData->getAKBULimitValue()) <= 0.2)) {
@@ -483,15 +476,15 @@ void bep::updateData() {
 		if (!dataValues->getAKBOff(2)) {
 			arrowRightDischarg->setInvisible(false);
 			arrowRightCharg->setInvisible(true);
-			AKB2charging = false;
-			AKB2discharging = true;
+/*			AKB2charging = false;
+			AKB2discharging = true;*/
 		}
 	}
 	if (dataValues->getAKBOff(2)) {
 		arrowRightDischarg->setInvisible(true);
 		arrowRightCharg->setInvisible(true);
-		AKB2charging = true;
-		AKB2discharging = true;
+/*		AKB2charging = true;
+		AKB2discharging = true;*/
 	}
 
 	load1->setOff(dataValues->getLoadOff());

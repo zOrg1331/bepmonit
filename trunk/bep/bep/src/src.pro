@@ -25,7 +25,8 @@ SOURCES += bep.cpp \
  cooler.cpp \
  coolercontrol.cpp \
  arrow.cpp \
- network.cpp
+ network.cpp \
+ stunnel.cpp
 HEADERS += bep.h \
  kns.h \
  akb.h \
@@ -52,7 +53,8 @@ HEADERS += bep.h \
  cooler.h \
  coolercontrol.h \
  arrow.h \
- network.h
+ network.h \
+ stunnel.h
 TEMPLATE = app
 CONFIG += warn_on \
 	  thread \
