@@ -6,7 +6,7 @@ bepcontrol::bepcontrol(QWidget *parent) : QWidget(parent) {
 	logger = new log();
 	confW = new conf(logger, this);
 	stats = new statdata();
-	tabs = new QTabWidget();
+	tabs = new QTabWidget(this);
 	dataValues = new DATA(logger, stats);
 	getDataValues = new GETDATA(dataValues, tcpSocket);
 	setDataValues = new SETDATA(dataValues, tcpSocket);
@@ -98,5 +98,8 @@ void bepcontrol::showTab(QString title) {
 
 void bepcontrol::lostConnection() {
 	logger->setMsg(4, 0, "приложение;нет соединения;0");
-	networker->estConnection();
+}
+
+void bepcontrol::closeEvent(QCloseEvent *event) {
+	networker->closeConnection();
 }

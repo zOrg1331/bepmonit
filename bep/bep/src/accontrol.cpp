@@ -11,6 +11,7 @@ accontrol::accontrol(DATA *DataValues, statdata *Stats, SETDATA *SetDataValues, 
 	chartU->setMargin(2);
 	chartU->setSpacing(2);
 	chartU->setFirstText("");
+	chartU->setSecondText(" ");
 	chartU->setTitle(trUtf8("Напряжение"));
 	chartU->setXRange(-10, 10);
 	chartU->setYRange(-10, 10);

@@ -44,10 +44,10 @@ class bep: public QWidget {
 	private:
 		void placeWidgets();
 
-		bool AKB1charging;
-		bool AKB2charging;
-		bool AKB1discharging;
-		bool AKB2discharging;
+// 		bool AKB1charging;
+// 		bool AKB2charging;
+// 		bool AKB1discharging;
+// 		bool AKB2discharging;
 
 		kns *knsW1;
 		kns *knsW2;

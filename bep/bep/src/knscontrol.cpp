@@ -15,10 +15,11 @@ knscontrol::knscontrol(int KNSNum, DATA *DataValues, statdata *Stats, SETDATA *S
 	chartTemp->setMargin(2);
 	chartTemp->setSpacing(2);
 	chartTemp->setFirstText("");
+	chartTemp->setSecondText(" ");
 	chartTemp->setTitle(trUtf8("Температура"));
 	chartTemp->setXRange(-10, 10);
 	chartTemp->setYRange(-10, 10);
-	chartTemp->setAxesName(trUtf8("время"), trUtf8("температура"));
+	chartTemp->setAxesName(trUtf8("время"), trUtf8("температура, %1C:").arg(QChar(0x00B0)));
 	chartTemp->showLegend(false);
 	chartTemp->setAutoscale(true);
 

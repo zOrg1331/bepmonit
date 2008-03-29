@@ -14,6 +14,7 @@ akbcontrol::akbcontrol(int AKBNum, DATA *DataValues, statdata *Stats, SETDATA *S
 	chartU->setMargin(2);
 	chartU->setSpacing(2);
 	chartU->setFirstText("");
+	chartU->setSecondText(" ");
 	chartU->setTitle(trUtf8("Напряжение"));
 	chartU->setXRange(-10, 10);
 	chartU->setYRange(-10, 10);
@@ -43,6 +44,7 @@ akbcontrol::akbcontrol(int AKBNum, DATA *DataValues, statdata *Stats, SETDATA *S
 	chartI->setMargin(2);
 	chartI->setSpacing(2);
 	chartI->setFirstText("");
+	chartI->setSecondText(" ");
 	chartI->setTitle(trUtf8("Ток"));
 	chartI->setXRange(-10, 10);
 	chartI->setYRange(-10, 10);
@@ -60,10 +62,11 @@ akbcontrol::akbcontrol(int AKBNum, DATA *DataValues, statdata *Stats, SETDATA *S
 	chartTemp->setMargin(2);
 	chartTemp->setSpacing(2);
 	chartTemp->setFirstText("");
+	chartTemp->setSecondText(" ");
 	chartTemp->setTitle(trUtf8("Температура"));
 	chartTemp->setXRange(-10, 10);
 	chartTemp->setYRange(-10, 10);
-	chartTemp->setAxesName(trUtf8("температура"), trUtf8("ток"));
+	chartTemp->setAxesName(trUtf8("время"), trUtf8("температура, %1C:").arg(QChar(0x00B0)));
 	chartTemp->showLegend(false);
 	chartTemp->setAutoscale(true);
 
